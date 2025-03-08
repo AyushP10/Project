@@ -1,4 +1,5 @@
 
+
 'use client';
 import { IconLoader3, IconSend2 } from '@tabler/icons-react';
 import axios from 'axios';
@@ -31,7 +32,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 
-const Signup = () => {
+const Tasks = () => {
 
   const router = useRouter();
 
@@ -72,15 +73,15 @@ const Signup = () => {
           <div className="p-4 sm:p-7">
             <div className="text-center">
               <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-                Manager SignUp
+                Add TASKS
               </h1>
               <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-                SignUp as Manager or Employer
+                Add TASKS for the Employee
               
               </p>
   </div>
     <div className="mt-5">
-      <button
+      {/* <button
         type="button"
         className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
       >
@@ -109,10 +110,10 @@ const Signup = () => {
           />
         </svg>
         Sign up with Google
-      </button>
-      <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">
+      </button> */}
+      {/* <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">
         Or
-      </div>
+      </div> */}
       {/* Form */}
       <form onSubmit={signupForm.handleSubmit}>
         <div className="grid gap-y-4">
@@ -122,7 +123,7 @@ const Signup = () => {
               htmlFor="name"
               className="block text-sm mb-2 dark:text-white"
             >
-              Full Name 
+              Employee Name 
             </label>
             <div className="relative">
               <input
@@ -158,13 +159,151 @@ const Signup = () => {
             }
           </div>
           {/* End Form Group */}
+
+
+            {/* Form Group */}
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm mb-2 dark:text-white"
+            >
+              Task Title 
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                id="name"
+                onChange={signupForm.handleChange}
+                value={signupForm.values.name}
+                className="border-2 py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                required=""
+                aria-describedby="email-error"
+              />
+              <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
+                <svg
+                  className="size-5 text-red-500"
+                  width={16}
+                  height={16}
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                </svg>
+              </div>
+            </div>
+            {
+              (signupForm.touched.name && signupForm.errors.name) && 
+              (
+                <p className="text-xs text-red-600 mt-2" id="email-error">
+                  {signupForm.errors.name}
+                </p>
+
+              )
+            }
+          </div>
+          {/* End Form Group */}
+
+
+
+          {/* Form Group */}
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm mb-2 dark:text-white"
+            >
+              Task Details 
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                id="name"
+                onChange={signupForm.handleChange}
+                value={signupForm.values.name}
+                className="border-2 py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                required=""
+                aria-describedby="email-error"
+              />
+              <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
+                <svg
+                  className="size-5 text-red-500"
+                  width={16}
+                  height={16}
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                </svg>
+              </div>
+            </div>
+            {
+              (signupForm.touched.name && signupForm.errors.name) && 
+              (
+                <p className="text-xs text-red-600 mt-2" id="email-error">
+                  {signupForm.errors.name}
+                </p>
+
+              )
+            }
+          </div>
+          {/* End Form Group */}
+
+
+
+          {/* Form Group */}
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm mb-2 dark:text-white"
+            >
+              Deadline
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                id="name"
+                onChange={signupForm.handleChange}
+                value={signupForm.values.name}
+                className="border-2 py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                required=""
+                aria-describedby="email-error"
+              />
+              <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
+                <svg
+                  className="size-5 text-red-500"
+                  width={16}
+                  height={16}
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                </svg>
+              </div>
+            </div>
+            {
+              (signupForm.touched.name && signupForm.errors.name) && 
+              (
+                <p className="text-xs text-red-600 mt-2" id="email-error">
+                  {signupForm.errors.name}
+                </p>
+
+              )
+            }
+          </div>
+          {/* End Form Group */}
+
+
+
+
           {/* Form Group */}
           <div>
             <label
               htmlFor="email"
               className="block text-sm mb-2 dark:text-white"
             >
-              Email address
+              Email
             </label>
             <div className="relative">
               <input
@@ -329,5 +468,5 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default Tasks
 

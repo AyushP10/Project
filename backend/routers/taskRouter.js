@@ -1,6 +1,6 @@
 // Importing Express
 const express = require('express');
-const Model = require('../Models/userModel');
+const Model = require('../Models/taskModel');
 
 
 const router = express.Router();
@@ -36,17 +36,17 @@ router.get('/getall', (req,res) => {
 });
 
 // : denotes URL Parameter
-// router.get('/getbycity/:city', (req, res) => {
-//     console.log(req.params.city);
+router.get('/getbycity/:city', (req, res) => {
+    console.log(req.params.city);
     
-//     Model.find({ city: req.params.city })
+    Model.find({ city: req.params.city })
 
-//     .then((result) => {
-//         res.status(200).json(result);
-//     }).catch((err) => {
-//         res.status(500).json(err);
-//     });
-// });
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
+});
 
 
 // Get by Email

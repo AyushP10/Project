@@ -4,15 +4,15 @@ const { Schema, model } = require('../connection');
 
 
 
-const neSchema = new Schema({
+const newSchema = new Schema({
     emp_name: {type: String, require: true},
-    emp_id: {type: Number, require:true},
     task: {type: String, require:true},
     details: {type: String, require:true},
+    deadline: {type: Number, require: true}
 
 })
 
 
-module.exports = model('tasks', neSchema);
+module.exports = model('tasks', newSchema);
 
 
