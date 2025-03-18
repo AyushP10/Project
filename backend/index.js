@@ -7,8 +7,6 @@ const taskRouter = require('./routers/taskRouter')
 const cors = require('cors');
 
 
-
-
 const app = express();
 
 const port = 5000;
@@ -17,7 +15,7 @@ const port = 5000;
 app.use(cors({ origin: ['http://localhost:3000'] }));
 app.use(express.json());
 app.use('/users', userRouter);
-app.use('/emp', empRouter);
+app.use('/empsignup', empRouter);
 app.use('/tasks', taskRouter);
 
 

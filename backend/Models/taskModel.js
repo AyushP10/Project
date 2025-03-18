@@ -9,7 +9,8 @@ const newSchema = new Schema({
     emp_email: {type: String, require: true},
     task: {type: String, require:true},
     details: {type: String, require:true},
-    deadline: {type: Number, require: true}
+    deadline: {type: Number, require: true},
+    // createdAt: {type: Date.now }
 
 })
 

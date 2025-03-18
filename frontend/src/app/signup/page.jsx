@@ -52,7 +52,7 @@ const Signup = () => {
       .then((result) => {
         toast.success('User Registered Successfully');
         resetForm();
-        // router.push('/login');
+        router.push('/login');
       }).catch((err) => {
         console.log(err);
         toast.error('Something Went Wrong');

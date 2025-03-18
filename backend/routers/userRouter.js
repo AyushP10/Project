@@ -1,7 +1,7 @@
 // Importing Express
 const express = require('express');
 const Model = require('../Models/userModel');
-
+const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 // consrt jwt = require('jsonwebtoken');
